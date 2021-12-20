@@ -1,47 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Diagnostics;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
-using System.Threading;
+using System.Linq.Expressions;
+using System.Net.Http.Headers;
+using System.Net.Mime;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading.Channels;
+using System.Xml.Schema;
+using CSharpFundamentals.Math;
+using Microsoft.VisualBasic;
+using Console = System.Console;
 
 
-namespace ConsoleApp1
+namespace CSharpFundamentals
 {
     class Program
     {
+        public static void Increment(int number)
+        {
+            number += 10;
+        }
+
+        public static void MakeOld(Person person)
+        {
+            person.Age += 10;
+        }
+
         static void Main(string[] args)
         {
-            byte oneByte1=255;
-            short twoByte2 = +32767;
-            int fourByte4 = 2100000000;
-            long eightByte8 = 8999999999999999999; //8.999.999.999.999.999.999
+
+           
 
 
-            float heightByte4 = 1.45f;
-            double heightByte8 = 2.90;
-            decimal heightByte16 = 4.90m;
+
+
+
+
+
+
+            if (false)
+            {
+                Console.Write("write Run Number and ENTER: ");
+                var runNumber = Console.ReadLine();
+                Console.Write("Write Exercise No and ENTER: ");
+                var exerciseNo = Console.ReadLine();
+
+                if (!String.IsNullOrWhiteSpace(runNumber) && !String.IsNullOrWhiteSpace(exerciseNo))
+                    RunExercises.RunMain(Int32.Parse(runNumber), Int32.Parse(exerciseNo));
+                else
+                    Console.WriteLine("ENTER or null inputs are not acceptable...");
+
+            }
+
             
-            char characterByte2 = 'S';
-            const bool statusByte1 = true;
-
-            string familyName = "Çelikçapa";
-
-            var age2 = 2; 
-            var weight2 = 80;
-            var carLenght2 = 9999999999999;
-            var height2 = 1.55f;
-            var character2 = 'S';
-            var familyName2 = "Çelikçapa";
-            var isLiveInTurkey2 = true;
 
 
-            Console.WriteLine("{0} {1}",byte.MaxValue,byte.MinValue);
+
+            
 
 
-            //TYPE CONVERSION
-            //Implicite
+            
+
+
+
+
+
 
         }
+
     }
 }
