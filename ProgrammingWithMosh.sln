@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpFundamentals", "Conso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpIntermediate", "CSharpIntermediate\CSharpIntermediate.csproj", "{6FDC0BDE-D3F9-4D3B-AF64-4605D5510BBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon", "Amazon\Amazon.csproj", "{40A8B98A-E060-45DB-AE3A-5767DE98066F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazon", "Amazon\Amazon.csproj", "{40A8B98A-E060-45DB-AE3A-5767DE98066F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppDownCasting", "WpfAppDownCasting\WpfAppDownCasting.csproj", "{C98E3DF6-BCDF-4E28-98B8-E64A59D6379D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppDownCasting", "WpfAppDownCasting\WpfAppDownCasting.csproj", "{C98E3DF6-BCDF-4E28-98B8-E64A59D6379D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{CC0C6A31-9937-4260-9554-C584F8354F27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C98E3DF6-BCDF-4E28-98B8-E64A59D6379D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C98E3DF6-BCDF-4E28-98B8-E64A59D6379D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C98E3DF6-BCDF-4E28-98B8-E64A59D6379D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0C6A31-9937-4260-9554-C584F8354F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0C6A31-9937-4260-9554-C584F8354F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0C6A31-9937-4260-9554-C584F8354F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0C6A31-9937-4260-9554-C584F8354F27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
