@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualBasic;
 
-namespace CSharpIntermediate.Testability
+namespace CSharpIntermediateNET.Testability
 {
     public class Order
     {

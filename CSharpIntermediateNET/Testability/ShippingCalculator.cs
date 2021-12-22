@@ -1,4 +1,4 @@
-﻿namespace CSharpIntermediate.Testability
+﻿namespace CSharpIntermediateNET.Testability
 {
     public interface IShippingCalculator
     {

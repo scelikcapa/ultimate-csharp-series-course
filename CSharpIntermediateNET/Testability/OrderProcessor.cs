@@ -1,7 +1,6 @@
 ﻿using System;
-using CSharpIntermediate.Fields;
 
-namespace CSharpIntermediate.Testability
+namespace CSharpIntermediateNET.Testability
 {
     public class OrderProcessor
     {
