@@ -7,11 +7,14 @@ using Amazon;
 using CSharpIntermediate.Composition;
 using CSharpIntermediate.Constructors;
 using CSharpIntermediate.Exercises;
+using CSharpIntermediate.Extensibility;
 using CSharpIntermediate.Fields;
 using CSharpIntermediate.Indexers;
 using CSharpIntermediate.MethodOverriding;
 using CSharpIntermediate.Methods;
 using CSharpIntermediate.ObjectInitializers;
+using CSharpIntermediate.Polymorphism;
+using DbMigrator = CSharpIntermediate.Extensibility.DbMigrator;
 using Shape = CSharpIntermediate.Casting.Shape;
 using Stack = CSharpIntermediate.Exercises.Stack;
 using Text = CSharpIntermediate.Inheritance.Text;
@@ -78,7 +81,7 @@ namespace CSharpIntermediate
 
 
             // COMPOSITION
-            var dbMigrator = new DbMigrator(new Logger());
+            var dbMigrator = new CSharpIntermediate.Composition.DbMigrator(new Logger());
             var logger = new Logger();
             var installer = new Installer(logger);
 
@@ -152,6 +155,22 @@ namespace CSharpIntermediate
 
             var rectangle = new AbstractClasses.Rectangle();
             rectangle.Draw();
+
+
+            // 35. INTERFACES AND EXTENSIBILITY
+            var dbMigrator2 = new DbMigrator(new FileLogger(@"C:\Users\Admin\source\repos\ConsoleApp1\CSharpIntermediate\ProjectsFileOperations\log.txt"));
+            dbMigrator2.Migrate();
+
+            dbMigrator2 = new DbMigrator(new ConsoleLogger());
+            dbMigrator2.Migrate();
+
+            // 36. INTERFACES AND POLYMORPHISM
+            // polymorphic behavior: calling different methods at runtime
+            var encoder = new VideoEncoder();
+            encoder.RegisterNotificationChannel(new MailNotificationChanel());
+            encoder.RegisterNotificationChannel(new SmsNotificationChannel());
+            encoder.Encode(new Video());
+
 
         }
 
