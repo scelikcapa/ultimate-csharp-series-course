@@ -13,6 +13,7 @@ using CSharpIntermediate.AbstractClasses;
 using CSharpIntermediate.Casting;
 using CSharpIntermediate.Constructors;
 using CSharpIntermediate.Exercises;
+using CSharpIntermediate.ExercisesWorkFlowEngine;
 using CSharpIntermediate.Extensibility;
 using CSharpIntermediate.Indexers;
 using CSharpIntermediate.Inheritance;

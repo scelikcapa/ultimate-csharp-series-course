@@ -7,6 +7,7 @@ using Amazon;
 using CSharpIntermediate.Composition;
 using CSharpIntermediate.Constructors;
 using CSharpIntermediate.Exercises;
+using CSharpIntermediate.ExercisesWorkFlowEngine;
 using CSharpIntermediate.Extensibility;
 using CSharpIntermediate.Fields;
 using CSharpIntermediate.Indexers;
@@ -170,6 +171,15 @@ namespace CSharpIntermediate
             encoder.RegisterNotificationChannel(new MailNotificationChanel());
             encoder.RegisterNotificationChannel(new SmsNotificationChannel());
             encoder.Encode(new Video());
+
+            // 39. EXERCISES
+            var workflow = new Workflow();
+            workflow.AddActivity(new ConsoleActivity());
+            workflow.AddActivity(new DatabaseActivity());
+            workflow.AddActivity(new FileActivity());
+
+            var engine = new WorkflowEngine();
+            engine.Run(workflow);
 
 
         }
