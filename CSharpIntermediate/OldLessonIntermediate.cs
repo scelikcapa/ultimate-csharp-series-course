@@ -7,6 +7,7 @@ using Amazon;
 using CSharpIntermediate.Composition;
 using CSharpIntermediate.Constructors;
 using CSharpIntermediate.Exercises;
+using CSharpIntermediate.ExercisesPolymorphism;
 using CSharpIntermediate.ExercisesWorkFlowEngine;
 using CSharpIntermediate.Extensibility;
 using CSharpIntermediate.Fields;
@@ -156,6 +157,24 @@ namespace CSharpIntermediate
 
             var rectangle = new AbstractClasses.Rectangle();
             rectangle.Draw();
+
+
+            // 32. EXERCISES
+            // Exercise 1: Design a database connection
+            var oracleConnection = new OracleConnection("connection string");
+            oracleConnection.OpenConnection();
+            oracleConnection.CloseConnection();
+            
+            // If you send null or empty string than throw an exception
+            var sqlConnection = new SqlConnection(null);
+            sqlConnection.OpenConnection();
+            sqlConnection.CloseConnection();
+
+            // Exercise 2: Design a database command
+            var dbCommand = new DbCommand(new SqlConnection("SQL connection string"), "SQL instruction");
+            dbCommand.Execute();
+            dbCommand = new DbCommand(new OracleConnection("Oracle connection string"), "Oracle instruction");
+            dbCommand.Execute();
 
 
             // 35. INTERFACES AND EXTENSIBILITY
