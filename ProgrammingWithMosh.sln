@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpIntermediateNET", "CSharpIntermediateNET\CSharpIntermediateNET.csproj", "{8F819CCD-2366-4116-8080-D56DBBF9C122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpAdvanceNET", "CSharpAdvanceNET\CSharpAdvanceNET.csproj", "{187120FC-8DD4-49E8-A936-9BCB02C91D9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8F819CCD-2366-4116-8080-D56DBBF9C122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F819CCD-2366-4116-8080-D56DBBF9C122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F819CCD-2366-4116-8080-D56DBBF9C122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187120FC-8DD4-49E8-A936-9BCB02C91D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187120FC-8DD4-49E8-A936-9BCB02C91D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187120FC-8DD4-49E8-A936-9BCB02C91D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187120FC-8DD4-49E8-A936-9BCB02C91D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
