@@ -1,4 +1,5 @@
 ﻿using System;
+using CSharpAdvanceNET.Delegates;
 using CSharpAdvanceNET.Generic;
 
 namespace CSharpAdvanceNET
@@ -36,6 +37,27 @@ namespace CSharpAdvanceNET
 
 
             // 7.DELEGATES
+            var processor = new PhotoProcessor();
+            var filters = new PhotoFilters();
+
+            // Normally have to pass new Photo() to filters.ApplyBrightness(Photo photo)
+            // But with delegates, you don't have to because processor.Process() doing this
+
+            // PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
+            // Can use generic handlers instead of yours
+            Action<Photo> filterHandler = filters.ApplyBrightness;
+            filterHandler += filters.ApplyContrast;
+            filterHandler += filters.Resize;
+            filterHandler += RemoveRedEyeFilter;
+
+            processor.Process("photo.jpg", filterHandler);
+            
+        }
+        
+        // using in 7.DELEGATES
+        static void RemoveRedEyeFilter(Photo photo)
+        {
+            Console.WriteLine("RemoveRedEyeFilter");
         }
 
     }
