@@ -53,6 +53,7 @@ namespace CSharpAdvanceNET
 
             processor.Process("photo.jpg", filterHandler);
 
+
             // 8.LAMBDA EXPRESSIONS
             // extra Square method needed without lambda expressions
             // Func<int, int> square = Square;
@@ -92,7 +93,18 @@ namespace CSharpAdvanceNET
             //    return book.Price < 10;
             //}
 
-            
+
+            //9. EVENTS
+            var video = new Video() { Title = "Video 1" };
+            var videoEncoder = new VideoEncoder(); // publisher
+            var mailService = new MailService(); // subscriber
+            var messageService = new MessageService(); // subscriber
+
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded; // no brakets!
+            videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
+
+            videoEncoder.Encode(video);
+
         }
 
         // using in 7.DELEGATES

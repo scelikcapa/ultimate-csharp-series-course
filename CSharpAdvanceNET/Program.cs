@@ -6,8 +6,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using CSharpAdvanceNET.Delegates;
+using CSharpAdvanceNET.EventsAndDelegates;
 using CSharpAdvanceNET.Generic;
-using CSharpAdvanceNET.LambdaExpressions;
 using Microsoft.SqlServer.Server;
 
 namespace CSharpAdvanceNET
@@ -17,11 +17,10 @@ namespace CSharpAdvanceNET
         static void Main(string[] args)
         {
            
-
+       
 
         }
-
-        
-        
     }
+
+   
 }
