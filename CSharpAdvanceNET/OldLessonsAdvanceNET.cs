@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using CSharpAdvanceNET.Delegates;
+using CSharpAdvanceNET.EventsAndDelegates;
+using CSharpAdvanceNET.ExtensionMethods;
 using CSharpAdvanceNET.Generic;
 using CSharpAdvanceNET.LambdaExpressions;
 
@@ -104,6 +108,22 @@ namespace CSharpAdvanceNET
             videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
 
             videoEncoder.Encode(video);
+
+
+            // 10.EXTENSION METHODS
+            // this class have to be in the scope of String Class
+            // class and method have to be static. but you can use it with instance. Different from regular methods
+            // if base class(etc String) change and same method comes then base class method overload extension
+            // use extension methods only when you really have to
+            string post = "This is supposed to be a very long blog post blah blah blah...";
+            var shortenedPost = post.Shorten(5);
+
+            Console.WriteLine(shortenedPost);
+
+            // real life examples for extension methods. Max() is an extension method in LINQ
+            IEnumerable<int> numbers2 = new List<int>() { 1, 5, 3, 10, 2, 18 };
+            var max = numbers2.Max();
+            Console.WriteLine(max);
 
         }
 
