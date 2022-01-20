@@ -10,6 +10,7 @@ using CSharpAdvanceNET.Delegates;
 using CSharpAdvanceNET.EventsAndDelegates;
 using CSharpAdvanceNET.ExtensionMethods;
 using CSharpAdvanceNET.Generic;
+using CSharpAdvanceNET.Linq;
 using Microsoft.SqlServer.Server;
 
 namespace CSharpAdvanceNET
@@ -18,6 +19,7 @@ namespace CSharpAdvanceNET
     {
         static void Main(string[] args)
         {
+              
         }
     }
 }

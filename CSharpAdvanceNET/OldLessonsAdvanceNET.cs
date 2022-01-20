@@ -125,6 +125,96 @@ namespace CSharpAdvanceNET
             var max = numbers2.Max();
             Console.WriteLine(max);
 
+
+            // 11.LINQ
+            var books3 = new Linq.BookRepository().GetBooks();
+            //var cheapBooks = new List<Book>();
+            //foreach (var book in books)
+            //{
+            //    if (book.Price <10)
+            //        cheapBooks.Add(book);
+            //}
+
+            // LINQ Query Operators
+            // always "from" is first query and "select" is last query
+            var cheaperBooks =
+                from b in books3
+                where b.Price < 10
+                orderby b.Title
+                select b.Title;
+
+            // LINQ Extension Methods
+            // Where - Orderby - Select
+            var cheapBooks2 = books3
+                                                .Where(b => b.Price < 10)
+                                                .OrderBy(b => b.Title)
+                                                .Select(b => b.Title);
+
+            foreach (var book2 in cheapBooks)
+            {
+                //Console.WriteLine(book.Title+" "+book.Price);
+                Console.WriteLine(book2);
+            }
+
+            // Single
+            // SingleOrDefault
+            var bookSingle = books3.SingleOrDefault(b => b.Title == "ASP.NET MVC++");
+            Console.WriteLine(bookSingle == null);
+            // First
+            // FirstOrDefault
+            var bookFirst = books3.FirstOrDefault(b => b.Title == "C# Advanced Topics");
+            Console.WriteLine(bookFirst.Title + " " + bookFirst.Price);
+            // Last
+            // LastOrDefault
+            var bookLast = books3.LastOrDefault(b => b.Title == "C# Advanced Topics");
+            Console.WriteLine(bookLast.Title + " " + bookLast.Price);
+            // Skip
+            // Take
+            var pagedBooks = books3.Skip(2).Take(3);
+            foreach (var pagedBook in pagedBooks)
+            {
+                Console.WriteLine(pagedBook.Title);
+            }
+            // Count
+            var count = books3.Count();
+            Console.WriteLine(count);
+            // Max
+            // Min
+            var maxPrice = books3.Max(b => b.Price);
+            var minPrice = books3.Min(b => b.Price);
+            Console.WriteLine(minPrice);
+            Console.WriteLine(maxPrice);
+            // Sum
+            var totalPrice = books3.Sum(b => b.Price);
+            Console.WriteLine(totalPrice);
+            // Average
+            var averagePrice = books3.Average(b => b.Price);
+            Console.WriteLine(averagePrice);
+
+
+            // 12.NULLABLE TYPES
+            // System.Nullable<DateTime> date = null;
+            DateTime? date = null;
+            Console.WriteLine("GetValueOrDefault(): " + date.GetValueOrDefault());
+            Console.WriteLine("HasValue: " + date.HasValue);
+            // Console.WriteLine("Value: "+date.Value); // exception here
+
+            // cannot convert DateTime?(Nullable) to DateTime, use GetValueOrDefault() 
+            date = new DateTime(2014, 1, 1);
+            DateTime date2 = date.GetValueOrDefault();
+            // can convert DateTime to DateTime?(Nullable)
+            DateTime? date3 = date2;
+
+            // Null Coalescing Operator
+            date = null;
+            //if (date != null)
+            //    date2 = date.GetValueOrDefault();
+            //else
+            //    date2=DateTime.Today;
+            date2 = date ?? DateTime.Today; // Null Coalescing Operator
+            date2 = (date != null) ? date.GetValueOrDefault() : DateTime.Today; // Ternary Operator
+            Console.WriteLine(date2);
+
         }
 
         // using in 7.DELEGATES
