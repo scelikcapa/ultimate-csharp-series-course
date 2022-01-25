@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using CSharpAdvanceNET.Delegates;
 using CSharpAdvanceNET.EventsAndDelegates;
+using CSharpAdvanceNET.ExceptionHandling;
 using CSharpAdvanceNET.ExtensionMethods;
 using CSharpAdvanceNET.Generic;
 using CSharpAdvanceNET.LambdaExpressions;
@@ -215,6 +217,83 @@ namespace CSharpAdvanceNET
             date2 = (date != null) ? date.GetValueOrDefault() : DateTime.Today; // Ternary Operator
             Console.WriteLine(date2);
 
+
+            // 13.DYNAMIC
+            // without dynamic, reflection needed. here is an example
+            object obj = "Mosh";
+            // assume that obj.GetHashCode() is an runtime method. than you have to do reflection
+            var methodInfo = obj.GetType().GetMethod("GetHashCode");
+            methodInfo.Invoke(null, null);
+            // with dynamic, dont have to use reflection
+            dynamic excelObject = "mosh";
+            excelObject.Optimize();
+
+
+            // dynamic type can be change at runtime
+            dynamic name = "Mosh";
+            name = 10;
+
+            dynamic a2 = 10;
+            dynamic b2 = 5;
+            var c = a2 + b2;
+
+            // implicit conversion
+            int i2 = 5;
+            dynamic d = i2;
+            long lNumber = d;
+
+
+            // 14.EXCEPTION HANDLING
+            try
+            {
+                var calculator = new Calculator();
+                var result2 = calculator.Divide(5, 0);
+            }
+            //catch (DivideByZeroException ex)
+            //{
+            //    Console.WriteLine("You cannot divide by 0.");
+            //}
+            //catch (ArithmeticException ex)
+            //{
+            //}
+            catch (Exception ex)
+            {
+                Console.WriteLine("Sorry, an unexpected error occured.");
+            }
+
+            // Unmanaged Resources: files, datebase, network connections, graphic handles
+            // Using keyword: no need finally block
+            // StreamReader streamReader=null;
+            try
+            {
+                using (var streamReader = new StreamReader(@"c:\file.zip"))
+                {
+                    var content = streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Sorry, an unexpected error occured.");
+            }
+            //finally
+            //{
+            //    if (streamReader!=null)
+            //        streamReader.Dispose();
+            //}
+
+            try
+            {
+                var api = new YouTubeApi();
+                var videos = api.GetVideos("mosh");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("YouTubeException Message:\n" + ex.Message);
+                Console.WriteLine("\nYouTubeException Source (namespace):\n" + ex.Source);
+                Console.WriteLine("\nYouTubeException StackTrace:\n" + ex.StackTrace);
+                Console.WriteLine("\nInnerException Message:\n" + ex.InnerException.Message);
+                Console.WriteLine("\nInnerException Source (namespace):\n" + ex.InnerException.Source);
+            }
         }
 
         // using in 7.DELEGATES
