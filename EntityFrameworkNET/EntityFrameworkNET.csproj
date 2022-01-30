@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CodeFirstDemo\CodeFirstPost.cs" />
+    <Compile Include="Migrations\202201301609080_CreatePost.cs" />
+    <Compile Include="Migrations\202201301609080_CreatePost.Designer.cs">
+      <DependentUpon>202201301609080_CreatePost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OldLessonsEntityFramework.cs" />
     <Compile Include="Post.cs">
       <DependentUpon>BlogModel.tt</DependentUpon>
@@ -98,6 +104,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202201301609080_CreatePost.resx">
+      <DependentUpon>202201301609080_CreatePost.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
