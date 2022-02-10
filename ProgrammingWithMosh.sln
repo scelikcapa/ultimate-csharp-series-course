@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\Code
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstExistingDatabase", "CodeFirstExistingDatabase\CodeFirstExistingDatabase.csproj", "{CA9BB25A-80A9-4FA9-986C-734010B392A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstExercisesVidzy", "CodeFirstExercisesVidzy\CodeFirstExercisesVidzy.csproj", "{53F5D3DF-1B76-418C-AD92-8D15C218D64F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{CA9BB25A-80A9-4FA9-986C-734010B392A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA9BB25A-80A9-4FA9-986C-734010B392A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA9BB25A-80A9-4FA9-986C-734010B392A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
