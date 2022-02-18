@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstExistingDatabase",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstExercisesVidzy", "CodeFirstExercisesVidzy\CodeFirstExercisesVidzy.csproj", "{53F5D3DF-1B76-418C-AD92-8D15C218D64F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnnotations", "DataAnnotations\DataAnnotations.csproj", "{415B010B-3387-41C8-8649-98E423189105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAPI", "FluentAPI\FluentAPI.csproj", "{C8FF8B88-C008-41DE-A26A-C4289BAB2746}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,14 @@ Global
 		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F5D3DF-1B76-418C-AD92-8D15C218D64F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415B010B-3387-41C8-8649-98E423189105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415B010B-3387-41C8-8649-98E423189105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415B010B-3387-41C8-8649-98E423189105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415B010B-3387-41C8-8649-98E423189105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8FF8B88-C008-41DE-A26A-C4289BAB2746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FF8B88-C008-41DE-A26A-C4289BAB2746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FF8B88-C008-41DE-A26A-C4289BAB2746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FF8B88-C008-41DE-A26A-C4289BAB2746}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
