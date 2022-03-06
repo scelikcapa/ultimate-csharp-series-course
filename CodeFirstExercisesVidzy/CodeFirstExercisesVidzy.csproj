@@ -70,9 +70,22 @@
     <Compile Include="Migrations\202202101152473_AddClassificationColumnToVideosTable.designer.cs">
       <DependentUpon>202202101152473_AddClassificationColumnToVideosTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203061531181_EnhanceVideosTable.cs" />
+    <Compile Include="Migrations\202203061531181_EnhanceVideosTable.Designer.cs">
+      <DependentUpon>202203061531181_EnhanceVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203061533426_EnhanceGenresTable.cs" />
+    <Compile Include="Migrations\202203061533426_EnhanceGenresTable.Designer.cs">
+      <DependentUpon>202203061533426_EnhanceGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203061555165_AddTagsTable.cs" />
+    <Compile Include="Migrations\202203061555165_AddTagsTable.Designer.cs">
+      <DependentUpon>202203061555165_AddTagsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag.cs" />
     <Compile Include="Video.cs" />
     <Compile Include="VidzyContext.cs" />
   </ItemGroup>
@@ -92,6 +105,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202101152473_AddClassificationColumnToVideosTable.resx">
       <DependentUpon>202202101152473_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061531181_EnhanceVideosTable.resx">
+      <DependentUpon>202203061531181_EnhanceVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061533426_EnhanceGenresTable.resx">
+      <DependentUpon>202203061533426_EnhanceGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061555165_AddTagsTable.resx">
+      <DependentUpon>202203061555165_AddTagsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

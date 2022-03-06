@@ -13,6 +13,8 @@ namespace CodeFirstExercisesVidzy
         {
             modelbuilder.Configurations.Add(new VideoConfiguration());
             modelbuilder.Configurations.Add(new GenreConfiguration());
+
+            base.OnModelCreating(modelbuilder);
         }
     }
 }
