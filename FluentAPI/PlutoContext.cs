@@ -18,8 +18,7 @@ namespace DataAnnotations
         {
             modelBuilder.Configurations.Add(new CourseConfiguration());
 
-
-            base.OnModelCreating(modelBuilder);
+            // base.OnModelCreating(modelBuilder);
         }
     }
     
