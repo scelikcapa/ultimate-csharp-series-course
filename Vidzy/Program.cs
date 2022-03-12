@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Vidzy
@@ -85,6 +86,29 @@ namespace Vidzy
             {
                 Console.WriteLine("{0} ({1})",group.Genre,group.VideoCount);
             }
+
+               
+            // ENTITY FRAMEWORK SECTION 7 EXERCISES: Loading Related Object
+
+            // Eager Loading with lambda expression: Include(v=>v.Genre)
+            var videos = context.Videos.Include(v => v.Genre).ToList();
+
+            foreach (var video in videos)
+            {
+                Console.WriteLine("Video Name: " + video.Name + " - Video Genre: " + video.Genre.Name);
+            }
+
+            // Explicit Loading with Mosh way
+            var genres = context.Genres.ToList();
+            var genreIds = genres.Select(g => g.Id);
+
+            var videosExplicit = context.Videos.Where(v => genreIds.Contains(v.GenreId));
+
+            foreach (var video in videosExplicit)
+            {
+                Console.WriteLine("Video Name: " + video.Name + " - Video Genre: " + video.Genre.Name);
+            }
+
         }
     }
 }
