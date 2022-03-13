@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2AEE16B3-AFD2-4C91-9751-E37310E4689C}</ProjectGuid>
+    <ProjectGuid>{91131F03-BB56-4225-BEB3-B683799592B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Vidzy</RootNamespace>
@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201510110433495_AddTags.Designer.cs">
       <DependentUpon>201510110433495_AddTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.cs" />
+    <Compile Include="Migrations\201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.Designer.cs">
+      <DependentUpon>201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510110433495_AddTags.resx">
       <DependentUpon>201510110433495_AddTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.resx">
+      <DependentUpon>201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

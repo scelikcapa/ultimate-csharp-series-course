@@ -1,4 +1,4 @@
-namespace Vidzy.Migrations
+namespace VidzyFirst.Migrations
 {
     using System.Data.Entity.Migrations;
     

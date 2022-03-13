@@ -1,4 +1,4 @@
-﻿namespace Vidzy
+﻿namespace VidzyFirst
 {
     public enum Classification : byte
     {

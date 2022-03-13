@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Queries
@@ -10,6 +11,16 @@ namespace Queries
         static void Main(string[] args)
         {
             var context = new PlutoContext();
+
+           
+
+        }
+
+        void OldCode()
+        {
+            var context = new PlutoContext();
+
+            // ENTITY FRAMEWORK SECTION 6: QUERYING DATA USING LINQ
 
             #region A- LINQ SYNTAX...
             var query =
@@ -152,15 +163,15 @@ namespace Queries
 
             foreach (var group in coursesGrouping)
             {
-                Console.WriteLine("Key: "+ group.Key);
+                Console.WriteLine("Key: " + group.Key);
 
-                foreach (var course in group) 
+                foreach (var course in group)
                     Console.WriteLine("\t" + course.Name);
             }
 
             #region Joins in LINQ Extension methods...
             // Inner Join
-            var courseInnerJoin= 
+            var courseInnerJoin =
                 context.Courses.Join(context.Authors,
                 c => c.AuthorId,
                 a => a.Id,
@@ -172,9 +183,9 @@ namespace Queries
 
             // Group Join
             var authorGroupJoin =
-                context.Authors.GroupJoin(context.Courses, 
-                    a => a.Id, 
-                    c => c.AuthorId, 
+                context.Authors.GroupJoin(context.Courses,
+                    a => a.Id,
+                    c => c.AuthorId,
                     (author, courses2) => new
                     {
                         Author = author,
@@ -184,11 +195,11 @@ namespace Queries
             // Cross Join
             var authorCrossJoin =
                 context.Authors.SelectMany(
-                    a => context.Courses, 
+                    a => context.Courses,
                     (author, course) => new
                     {
-                        AuthorName=author.Name,
-                        CourseName=course.Name
+                        AuthorName = author.Name,
+                        CourseName = course.Name
                     });
 
             #endregion
@@ -205,7 +216,7 @@ namespace Queries
             context.Courses.Any(c => c.Level == 1);
 
             // Aggregating - Singleton Value
-            var count=context.Courses.Count(c=>c.Level==1);
+            var count = context.Courses.Count(c => c.Level == 1);
             count = context.Courses.Where(c => c.Level == 1).Count();
             context.Courses.Max(c => c.FullPrice);
             context.Courses.Min(c => c.FullPrice);
@@ -216,7 +227,7 @@ namespace Queries
             // - Iterating
             // - ToList(), ToArray, ToDictionary
             // - First(), Last, Single, Count, Max, Min, Average
-            var coursesDefered = 
+            var coursesDefered =
                 context.Courses
                 .ToList().Where(c => c.IsBeginnerCourse == true);
 
@@ -224,7 +235,7 @@ namespace Queries
             {
                 Console.WriteLine(course.Name);
             }
-            
+
             // IQueryable - extend queries
             // with IQueryable, query works after filtering
             // with IEnumerable, query works immediately without filtering
@@ -239,9 +250,76 @@ namespace Queries
 
             #endregion
 
+            // ENTITY FRAMEWORK SECTION 8: UPDATING DATA
 
+            #region A- Adding Objects...
+            // Way-1: for WPF applications
+            // var authors = context.Authors.ToList();
+            // var authorOne = authors.Single(a => a.Id == 1);
 
+            var courseAdding = new Course
+            {
+                Name = "New Course 2",
+                Description = "New Description",
+                FullPrice = 19.95f,
+                Level = 1,
+                // code with problem. two record problem
+                // Author = new Author {Id = 1, Name = "Mosh Hamedani"}
 
+                // Way-1: for WPF applications
+                // Author = authorOne
+
+                // Way-2: for WEB applications
+                AuthorId = 1
+            };
+
+            context.Courses.Add(courseAdding);
+            context.SaveChanges();
+            #endregion
+
+            #region B- Updating - Removing Objects...
+            // Entity Framework Section 8: 65. Updating Objects 
+            var courseUpdating = context.Courses.Find(4); // Single(c => c.Id == 4)
+            courseUpdating.Name = "New Name";
+            courseUpdating.AuthorId = 2;
+
+            context.SaveChanges();
+
+            // Entity Framework Section 8: 66. Removing Objects
+            var courseRemoved = context.Courses.Find(6); // Single(c => c.Id == 4)
+            context.Courses.Remove(courseRemoved); // CourseTags are removed too - cascade delete
+            context.SaveChanges();
+
+            // without Cascade Delete
+            var authorRemoved = context.Authors.Include(a => a.Courses).Single(a => a.Id == 2);
+            context.Courses.RemoveRange(authorRemoved.Courses);
+            context.Authors.Remove(authorRemoved);
+            context.SaveChanges();
+
+            #endregion
+
+            #region C- Working with Change Tracker...
+
+            // Add an object
+            context.Authors.Add(new Author { Name = "New Author" });
+
+            // Update an object
+            var author1 = context.Authors.Find(3);
+            author1.Name = "Updated";
+
+            // Remove an object
+            var another = context.Authors.Find(4);
+            context.Authors.Remove(another);
+
+            var entries = context.ChangeTracker.Entries();
+
+            foreach (var entry in entries)
+            {
+                // entry.Reload();
+                Console.WriteLine(entry.State);
+            }
+
+            #endregion
 
         }
     }

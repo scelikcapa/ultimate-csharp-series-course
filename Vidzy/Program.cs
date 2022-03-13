@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 
-namespace Vidzy
+namespace VidzyFirst
 {
     class Program
     {
@@ -10,7 +10,7 @@ namespace Vidzy
         {
             // ENTITY FRAMEWORK SECTION 6 EXERCISES
 
-            var context = new VidzyContext();
+            var context = new VidzyFirstContext();
 
             // Action movies sorted by name
             var sortedActionMovies = context.Videos
